@@ -1,9 +1,15 @@
-from src.textSummarizer.logging import logger
+## entire training pipeline will be create over here
 
-logger.info("Welcome to the Text Summarizer project")
-logger.info("This is the main entry point of the application")
-logger.info("Initializing the project...")
-    
-    # Add your main application logic here
-    
-logger.info("Application execution completed")
+from src.textSummarizer.logging import logger
+from src.textSummarizer.pipeline.stage_1 import DataIngestionTrainingPipeline
+
+STAGE_NAME = "Data Ingestion stage"
+
+try:
+    logger.info("initate pipeline stage 1{STAGE_NAME}")
+    data_ingestion_pipeline = DataIngestionTrainingPipeline()
+    data_ingestion_pipeline.initiate_data_ingestion()
+    logger.info("stage completed {STAGE_NAME}")
+except Exception as e:
+    logger.exception(e)
+    raise e
