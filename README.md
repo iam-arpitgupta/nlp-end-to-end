@@ -1,6 +1,3 @@
 # nlp-end-to-end
 
-
-### workflow 
-config,yaml 
-params.yaml 
+this project demonstrate the use of different MlOps Tools like (dagshub , mlflow, dvc , airflow ) on a nlp application 
